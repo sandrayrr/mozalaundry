@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    name="viewport" />
+  <meta content="mobile_tab" name="shell-type" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#bec6e0",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#eff4ff",
+            "secondary": "#565e74",
+            "on-surface-variant": "#5c3f40",
+            "surface-container-high": "#dce9ff",
+            "tertiary-container": "#007ab8",
+            "primary": "#b80035",
+            "on-secondary-fixed": "#131b2e",
+            "on-secondary-container": "#5c647a",
+            "surface-container": "#e5eeff",
+            "inverse-surface": "#213145",
+            "primary-fixed-dim": "#ffb3b6",
+            "on-surface": "#0b1c30",
+            "surface-container-highest": "#d3e4fe",
+            "inverse-on-surface": "#eaf1ff",
+            "on-primary-fixed": "#40000c",
+            "secondary-fixed": "#dae2fd",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#920028",
+            "secondary-container": "#dae2fd",
+            "primary-container": "#e11d48",
+            "surface-variant": "#d3e4fe",
+            "on-tertiary-container": "#fbfbff",
+            "surface-dim": "#cbdbf5",
+            "surface": "#f8f9ff",
+            "on-tertiary-fixed": "#001d31",
+            "surface-tint": "#be0037",
+            "on-background": "#0b1c30",
+            "tertiary-fixed": "#cce5ff",
+            "outline-variant": "#e5bdbe",
+            "background": "#f8f9ff",
+            "tertiary-fixed-dim": "#93ccff",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#906f70",
+            "primary-fixed": "#ffdada",
+            "on-secondary-fixed-variant": "#3f465c",
+            "tertiary": "#006093",
+            "surface-bright": "#f8f9ff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed-variant": "#004b73",
+            "on-primary": "#ffffff",
+            "inverse-primary": "#ffb3b6",
+            "on-primary-container": "#fffaf9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "margin-desktop": "3rem",
+            "gutter-desktop": "1.5rem",
+            "space-lg": "1.5rem",
+            "margin-tablet": "2rem",
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "gutter-tablet": "1.25rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "title-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "title-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+          }
+        }
+      }
+    };
+  </script>
+
+<!-- =========================
+     SEO - MOZA LAUNDRY
+     ========================= -->
+
+<title>Moza Laundry Trusmi, Weru, Gegunung & Karangsari | Laundry Terdekat</title>
+
+<meta name="description"
+content="Moza Laundry melayani kebutuhan laundry di Trusmi, Weru, Gegunung, dan Karangsari. Temukan cabang Moza Laundry terdekat dan hubungi kami melalui WhatsApp." />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="author" content="Moza Laundry" />
+<meta name="theme-color" content="#E11D48" />
+
+<!-- Canonical -->
+
+<link rel="canonical" href="https://mozalaundry.co-id.id/" />
+
+<!-- Open Graph -->
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:site_name" content="Moza Laundry" />
+<meta property="og:url" content="https://mozalaundry.co-id.id/" />
+<meta property="og:title"
+  content="Moza Laundry Trusmi, Weru, Gegunung & Karangsari | Laundry Terdekat" />
+<meta property="og:description"
+  content="Moza Laundry melayani kebutuhan laundry di Trusmi, Weru, Gegunung, dan Karangsari." />
+<meta property="og:image"
+  content="https://mozalaundry.co-id.id/assets/logomoza.png" />
+
+<!-- Twitter / Social Preview -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title"
+  content="Moza Laundry Trusmi, Weru, Gegunung & Karangsari | Laundry Terdekat" />
+<meta name="twitter:description"
+  content="Moza Laundry melayani kebutuhan laundry di Trusmi, Weru, Gegunung, dan Karangsari." />
+<meta name="twitter:image"
+  content="https://mozalaundry.co-id.id/assets/logomoza.png" />
+
+<!-- Favicon -->
+
+<link rel="icon"
+  type="image/png"
+  href="https://mozalaundry.co-id.id/assets/logomoza.png" />
+
+<!-- =========================
+     LOCAL BUSINESS SCHEMA
+     ========================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WashAndDryCleaner",
+  "@id": "https://mozalaundry.co-id.id/#business",
+  "name": "Moza Laundry",
+  "url": "https://mozalaundry.co-id.id/",
+  "logo": "https://mozalaundry.co-id.id/assets/logomoza.png",
+  "image": "https://mozalaundry.co-id.id/assets/logomoza.png",
+  "description": "Moza Laundry melayani kebutuhan laundry di Trusmi, Weru, Gegunung, dan Karangsari. Higienis 1 mesin 1 pelanggan,antar jemput gratis.",
+  "telephone": "+6283839593431",
+  "email": "mozalaundrycabangweru@gmail.com",
+  "priceRange": "Rp 5.000 - Rp 15.000",
+  
+  "areaServed": [
+    { "@type": "City", "name": "Cirebon" },
+    { "@type": "Place", "name": "Trusmi" },
+    { "@type": "Place", "name": "Weru" },
+    { "@type": "Place", "name": "Gegunung" },
+    { "@type": "Place", "name": "Karangsari" }
+  ],
+
+  "department": [
+    {
+      "@type": "WashAndDryCleaner",
+      "name": "Moza Laundry Trusmi",
+      "telephone": "+6288220608555",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Trusmi",
+        "addressLocality": "Cirebon",
+        "addressRegion": "Jawa Barat",
+        "addressCountry": "ID"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    },
+    {
+      "@type": "WashAndDryCleaner",
+      "name": "Moza Laundry Weru",
+      "telephone": "+6288218591963",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Weru",
+        "addressLocality": "Cirebon",
+        "addressRegion": "Jawa Barat",
+        "addressCountry": "ID"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    },
+    {
+      "@type": "WashAndDryCleaner",
+      "name": "Moza Laundry Gegunung",
+      "telephone": "+6283171192666",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Gegunung",
+        "addressLocality": "Cirebon",
+        "addressRegion": "Jawa Barat",
+        "addressCountry": "ID"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    },
+    {
+      "@type": "WashAndDryCleaner",
+      "name": "Moza Laundry Karangsari",
+      "telephone": "+6288102272288",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Karangsari",
+        "addressLocality": "Cirebon",
+        "addressRegion": "Jawa Barat",
+        "addressCountry": "ID"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    }
+  ]
+}
+</script>
+
+
+
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen flex flex-col relative">
+  <header
+    class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-xl border-b border-rose-100 shadow-[0_1px_8px_rgba(225,29,72,0.06)] pt-safe">
+    <div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <img alt="Moza Laundry Logo" class="h-8 w-auto object-contain flex-shrink-0" src="assets/logomoza.png" />
+        <div class="hidden xs:flex flex-col min-w-0 border-l border-rose-200 pl-2"><span
+            class="font-label-md text-[13px] text-on-surface truncate font-bold leading-none">Moza Laundry</span><span
+            class="font-label-sm text-[11px] text-primary-container truncate leading-none mt-0.5 font-semibold">Premium
+            &amp; Higienis</span></div>
+      </div>
+      <div class="flex items-center gap-2 flex-shrink-0"><a
+          class="h-10 px-3.5 rounded-full bg-gradient-to-r from-[#E11D48] to-[#BE123C] text-white font-label-md text-label-md flex items-center gap-1.5 shadow-[0_4px_12px_rgba(225,29,72,0.3)] hover:brightness-110 active:scale-95 transition-all"
+          href="https://wa.me/6283839593431?text=Halo%20Moza%20Laundry%2C%20saya%20mau%20order%20antar-jemput"
+          target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span>Pesan WA</span></a>
+
+      </div>
+  </header>
+
+  <main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface">
+    <div class="flex flex-col w-full">
+      <!-- 1. HERO SECTION -->
+      <section
+        class="px-gutter-mobile pt-space-md pb-space-lg flex flex-col gap-space-md bg-gradient-to-b from-rose-50/50 via-white to-white">
+        <div
+          class="inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full bg-rose-50 border border-rose-200/80 text-primary-container">
+          <span class="material-symbols-outlined text-[15px] text-primary-container"
+            style="font-variation-settings: 'FILL' 1;">verified</span>
+          <span class="font-label-sm text-label-sm font-semibold tracking-wide">Solusi Laundry di Cirebon
+          </span>
+        </div>
+        <div class="flex flex-col gap-space-xs">
+          <h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface leading-tight">
+            Moza Laundry <span class="text-primary-container">Bersih</span>, <span
+              class="text-primary-container">Wangi</span>, &amp; Praktis
+          </h1>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Serahkan pakaian Anda kepada Moza Laundry. Kami melayani kebutuhan laundry di Trusmi, Weru, Gegunung,
+            dan Karangsari. Pilih cabang terdekat dan pesan layanan laundry melalui WhatsApp.
+          </p>
+        </div>
+        <!-- Hero CTA Pair -->
+        <div class="flex flex-col xs:flex-row gap-space-sm pt-space-xs">
+          <a class="w-full h-12 rounded-xl bg-gradient-to-r from-[#E11D48] to-[#BE123C] text-white font-label-md text-label-md flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(225,29,72,0.35)] active:scale-[0.98] transition-transform font-bold hover:brightness-105"
+            href="#interactive-selector">
+            <span class="material-symbols-outlined text-[20px]">chat</span>
+            <span>Pesan Sekarang</span>
+          </a>
+          <a class="w-full h-12 rounded-xl bg-white border border-rose-200 text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform hover:bg-rose-50"
+            href="#cabang-section">
+            <span class="material-symbols-outlined text-[20px] text-primary-container">storefront</span>
+            <span>Lihat 4 Cabang</span>
+          </a>
+        </div>
+        <!-- Hero Photography Container -->
+        <div class="relative w-full rounded-2xl overflow-hidden shadow-md mt-space-xs border border-rose-100">
+          <img alt="Layanan laundry Moza Laundry" class="w-full h-56 object-cover object-center"
+            src="assets/image copy 2.png" />
+          <div
+            class="absolute bottom-3 left-3 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md flex items-center gap-1.5 shadow-sm border border-rose-100">
+            <span class="material-symbols-outlined text-primary-container text-[16px]">verified_user</span>
+            <span class="font-label-sm text-label-sm text-on-surface font-semibold">Hygienic Washing Standard</span>
+          </div>
+          <div
+            class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-primary-container text-white font-label-sm text-label-sm shadow-sm font-semibold">
+            1 Mesin 1 Pelanggan
+          </div>
+        </div>
+        <!-- Trust Indicator Bento Grid -->
+        <div class="grid grid-cols-2 gap-2.5 pt-space-xs">
+          <div class="p-3.5 rounded-xl bg-rose-50/70 border border-rose-100 flex flex-col gap-1 shadow-sm">
+            <div class="flex items-center gap-1.5 text-primary-container">
+              <span class="material-symbols-outlined text-[18px]">location_on</span>
+              <span class="font-label-md text-label-md text-on-surface font-bold">4 Cabang</span>
+            </div>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Trusmi, Weru & Lainnya</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-rose-50/70 border border-rose-100 flex flex-col gap-1 shadow-sm">
+            <div class="flex items-center gap-1.5 text-primary-container">
+              <span class="material-symbols-outlined text-[18px]">group</span>
+              <span class="font-label-md text-label-md text-on-surface font-bold">10.000+</span>
+            </div>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Pelanggan Puas</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-rose-50/70 border border-rose-100 flex flex-col gap-1 shadow-sm">
+            <div class="flex items-center gap-1.5 text-primary-container">
+              <span class="material-symbols-outlined text-[18px]">electric_moped</span>
+              <span class="font-label-md text-label-md text-on-surface font-bold">Pickup &amp; Delivery</span>
+            </div>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Antar Jemput Gratis*</span>
+          </div>
+          <div class="p-3.5 rounded-xl bg-rose-50/70 border border-rose-100 flex flex-col gap-1 shadow-sm">
+            <div class="flex items-center gap-1.5 text-primary-container">
+              <span class="material-symbols-outlined text-[18px]">bolt</span>
+              <span class="font-label-md text-label-md text-on-surface font-bold">Layanan Kilat</span>
+            </div>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Selesai 6 Jam</span>
+          </div>
+        </div>
+      </section>
+      <!-- 2. SERVICES SECTION -->
+          <section class="px-gutter-mobile py-space-lg flex flex-col gap-space-md bg-white">
+        <div class="flex flex-col gap-1">
+          <div
+            class="inline-flex items-center gap-1.5 text-primary-container font-label-sm text-label-sm font-bold tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">dry_cleaning</span>
+            <span>DAFTAR HARGA TERBARU</span>
+          </div>
+          <h2 class="font-headline-xl text-headline-xl text-on-surface">Layanan Moza Laundry</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Bersih, Rapi, Wangi — Moza Laundry Solusinya! Pilih layanan dan durasi sesuai kebutuhan Anda.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-3.5">
+          
+          <!-- Layanan 1: Cuci Setrika -->
+          <div
+            class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3 hover:border-rose-300 transition-colors">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[22px]">iron</span>
+              </div>
+              <div>
+                <h3 class="font-title-sm text-title-sm text-on-surface">Cuci Setrika</h3>
+                <span class="font-body-sm text-body-sm text-primary-container font-semibold">Harga per 3 Kg</span>
+              </div>
+            </div>
+            <!-- Tabel Harga Durasi -->
+            <div class="flex flex-col gap-1.5 p-3 rounded-lg bg-rose-50/50 border border-rose-100">
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span>3 Hari</span>
+                <span class="font-bold">Rp 7.000</span>
+              </div>
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span>Reguler</span>
+                <span class="font-bold">Rp 8.000</span>
+              </div>
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span>Xpress</span>
+                <span class="font-bold">Rp 10.000</span>
+              </div>
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span class="font-semibold">Kilat</span>
+                <span class="font-bold text-primary-container">Rp 15.000</span>
+              </div>
+            </div>
+            <a class="self-start inline-flex items-center gap-1 font-label-md text-label-md text-primary-container font-bold hover:underline"
+              href="#interactive-selector">
+              <span>Pesan Layanan</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+
+          <!-- Layanan 2: Cuci Lipat -->
+          <div
+            class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3 hover:border-rose-300 transition-colors">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[22px]">local_laundry_service</span>
+              </div>
+              <div>
+                <h3 class="font-title-sm text-title-sm text-on-surface">Cuci Lipat</h3>
+                <span class="font-body-sm text-body-sm text-primary-container font-semibold">Harga per 5 Kg</span>
+              </div>
+            </div>
+            <!-- Tabel Harga Durasi -->
+            <div class="flex flex-col gap-1.5 p-3 rounded-lg bg-rose-50/50 border border-rose-100">
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span>3 Hari</span>
+                <span class="font-bold">Rp 5.000</span>
+              </div>
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span>Reguler</span>
+                <span class="font-bold">Rp 6.000</span>
+              </div>
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span>Xpress</span>
+                <span class="font-bold">Rp 8.000</span>
+              </div>
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span class="font-semibold">Kilat</span>
+                <span class="font-bold text-primary-container">Rp 10.000</span>
+              </div>
+            </div>
+            <a class="self-start inline-flex items-center gap-1 font-label-md text-label-md text-primary-container font-bold hover:underline"
+              href="#interactive-selector">
+              <span>Pesan Layanan</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+
+          <!-- Layanan 3: Setrika Saja -->
+          <div
+            class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3 hover:border-rose-300 transition-colors">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[22px]">format_paint</span>
+              </div>
+              <div>
+                <h3 class="font-title-sm text-title-sm text-on-surface">Setrika Saja</h3>
+                <span class="font-body-sm text-body-sm text-primary-container font-semibold">Harga per 4 Kg</span>
+              </div>
+            </div>
+            <!-- Tabel Harga Durasi -->
+            <div class="flex flex-col gap-1.5 p-3 rounded-lg bg-rose-50/50 border border-rose-100">
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span>3 Hari</span>
+                <span class="font-bold">Rp 5.000</span>
+              </div>
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span>Reguler</span>
+                <span class="font-bold">Rp 6.000</span>
+              </div>
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span>Xpress</span>
+                <span class="font-bold">Rp 8.000</span>
+              </div>
+              <div class="flex justify-between items-center text-on-surface font-body-md text-body-md">
+                <span class="font-semibold">Kilat</span>
+                <span class="font-bold text-primary-container">Rp 10.000</span>
+              </div>
+            </div>
+            <a class="self-start inline-flex items-center gap-1 font-label-md text-label-md text-primary-container font-bold hover:underline"
+              href="#interactive-selector">
+              <span>Pesan Layanan</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+      <!-- 3. WHY CHOOSE US -->
+      <section class="px-gutter-mobile py-space-lg bg-rose-50/50 flex flex-col gap-space-md border-y border-rose-100">
+        <div class="flex flex-col gap-1">
+          <div
+            class="inline-flex items-center gap-1.5 text-primary-container font-label-sm text-label-sm font-bold tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">verified</span>
+            <span>KEUNGGULAN UTAMA</span>
+          </div>
+          <h2 class="font-headline-xl text-headline-xl text-on-surface">Kenapa Pilih Moza Laundry?</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Standar kualitas terbaik untuk kenyamanan pakaian Anda setiap hari.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-3">
+          <!-- Feature 1 -->
+          <div class="p-4 rounded-xl bg-white border border-rose-100 flex items-start gap-3 shadow-sm">
+            <div
+              class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-200 text-primary-container flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-[24px]">sanitizer</span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Bersih &amp; Higienis</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Sistem 1 mesin 1 pelanggan tanpa campur pakaian lain. Menggunakan air terfiltrasi 3 tahap &amp; deterjen
+                bersertifikasi.
+              </p>
+            </div>
+          </div>
+          <!-- Feature 2 -->
+          <div class="p-4 rounded-xl bg-white border border-rose-100 flex items-start gap-3 shadow-sm">
+            <div
+              class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-200 text-primary-container flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-[24px]">spa</span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Wangi Lebih Lama</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Formula pewangi konsentrat eksklusif tahan hingga 14 hari di dalam lemari tanpa bau apek sedikitpun.
+              </p>
+            </div>
+          </div>
+          <!-- Feature 3 -->
+          <div class="p-4 rounded-xl bg-white border border-rose-100 flex items-start gap-3 shadow-sm">
+            <div
+              class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-200 text-primary-container flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-[24px]">schedule</span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Proses Cepat &amp; Tepat Waktu</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Komitmen waktu terukur. Tersedia paket reguler, Same Day 12 jam, hingga layanan Express 4–6 jam.
+              </p>
+            </div>
+          </div>
+          <!-- Feature 4 -->
+          <div class="p-4 rounded-xl bg-white border border-rose-100 flex items-start gap-3 shadow-sm">
+            <div
+              class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-200 text-primary-container flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-[24px]">local_shipping</span>
+            </div>
+            <div class="flex flex-col gap-0.5">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Antar Jemput Doorstep</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Driver berseragam kami siap menjemput dan mengantarkan cucian ke apartemen maupun rumah Anda dengan
+                aman.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 4. HOW IT WORKS -->
+      <section class="px-gutter-mobile py-space-lg flex flex-col gap-space-md bg-white">
+        <div class="flex flex-col gap-1">
+          <div
+            class="inline-flex items-center gap-1.5 text-primary-container font-label-sm text-label-sm font-bold tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">touch_app</span>
+            <span>LANGKAH MUDAH</span>
+          </div>
+          <h2 class="font-headline-xl text-headline-xl text-on-surface">Order Laundry Jadi Lebih Mudah</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Cukup 4 langkah praktis dari rumah tanpa repot keluar macet.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <!-- Step 1 -->
+          <div class="p-4 rounded-xl bg-white border border-rose-100 shadow-sm flex items-start gap-3">
+            <div
+              class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center font-label-md text-label-md flex-shrink-0 shadow-sm font-bold">
+              1
+            </div>
+            <div class="flex flex-col">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Pilih Layanan</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Tentukan jenis layanan Cuci Setrika, Cuci Lipat, atau Setrika Saja sesuai kebutuhan dan durasi
+                pengerjaan Anda.
+              </p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="p-4 rounded-xl bg-white border border-rose-100 shadow-sm flex items-start gap-3">
+            <div
+              class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center font-label-md text-label-md flex-shrink-0 shadow-sm font-bold">
+              2
+            </div>
+            <div class="flex flex-col">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Pilih Cabang Terdekat</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Pilih outlet terdekat: Trusmi, Weru, Gegunung, atau Karangsari untuk layanan antar-jemput lebih cepat.
+              </p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="p-4 rounded-xl bg-white border border-rose-100 shadow-sm flex items-start gap-3">
+            <div
+              class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center font-label-md text-label-md flex-shrink-0 shadow-sm font-bold">
+              3
+            </div>
+            <div class="flex flex-col">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Chat WhatsApp Cabang</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Kirimkan lokasi penjemputan dan instruksi khusus kain Anda langsung ke admin WhatsApp outlet pilihan.
+              </p>
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="p-4 rounded-xl bg-white border border-rose-100 shadow-sm flex items-start gap-3">
+            <div
+              class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center font-label-md text-label-md flex-shrink-0 shadow-sm font-bold">
+              4
+            </div>
+            <div class="flex flex-col">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Laundry Selesai Diantar</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Pakaian Anda kembali tepat waktu dalam kondisi bersih higienis, beraroma harum, dan siap pakai.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 5. BRANCH SECTION -->
+      <section class="px-gutter-mobile py-space-lg bg-rose-50/40 border-t border-rose-100 flex flex-col gap-space-md"
+        id="cabang-section">
+        <div class="flex flex-col gap-1">
+          <div
+            class="inline-flex items-center gap-1.5 text-primary-container font-label-sm text-label-sm font-bold tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">store</span>
+            <span>LOKASI OUTLET</span>
+          </div>
+          <h2 class="font-headline-xl text-headline-xl text-on-surface">Temukan Cabang Terdekat</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Kami hadir di 4 titik strategis. Pilih cabang terdekat untuk layanan antar jemput lebih kilat!
+          </p>
+        </div>
+        <!-- 4 Branch Cards -->
+        <div class="flex flex-col gap-4">
+          <!-- Cabang 1: Trusmi -->
+          <div class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-primary-container font-label-sm text-label-sm font-bold">Cabang
+                01</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5 font-medium">
+                <span class="w-2 h-2 rounded-full bg-primary-container"></span> Buka 08.00 - 20.00
+              </span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface">Moza Laundry Trusmi</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Trusmi
+              </p>
+            </div>
+            <div class="flex items-center gap-2 text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[18px] text-primary-container">call</span>
+              <span>0882-2060-8555</span>
+            </div>
+            <div class="flex gap-2 pt-1">
+              <a class="flex-1 h-11 rounded-xl bg-gradient-to-r from-[#E11D48] to-[#BE123C] text-white font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform font-bold hover:brightness-105"
+                href="https://wa.me/6288220608555?text=Halo%20Moza%20Laundry%20Trusmi,%20saya%20ingin%20menanyakan%20layanan%20laundry"
+                target="_blank">
+                <span class="material-symbols-outlined text-[18px]">chat</span>
+                <span>WhatsApp Trusmi</span>
+              </a>
+              <a class="h-11 px-3.5 rounded-xl bg-white border border-rose-200 text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform hover:bg-rose-50"
+                href="https://maps.google.com/?q=Moza+Laundry+Trusmi" target="_blank">
+                <span class="material-symbols-outlined text-[18px] text-primary-container">map</span>
+                <span>Maps</span>
+              </a>
+            </div>
+          </div>
+          <!-- Cabang 2: Weru -->
+          <div class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-primary-container font-label-sm text-label-sm font-bold">Cabang
+                02</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5 font-medium">
+                <span class="w-2 h-2 rounded-full bg-primary-container"></span> Buka 08.00 - 17.00
+              </span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface">Moza Laundry Weru</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Weru
+              </p>
+            </div>
+            <div class="flex items-center gap-2 text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[18px] text-primary-container">call</span>
+              <span>0882-1859-1963</span>
+            </div>
+            <div class="flex gap-2 pt-1">
+              <a class="flex-1 h-11 rounded-xl bg-gradient-to-r from-[#E11D48] to-[#BE123C] text-white font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform font-bold hover:brightness-105"
+                href="https://wa.me/6288218591963?text=Halo%20Moza%20Laundry%20Weru,%20saya%20ingin%20menanyakan%20layanan%20laundry"
+                target="_blank">
+                <span class="material-symbols-outlined text-[18px]">chat</span>
+                <span>WhatsApp Weru</span>
+              </a>
+              <a class="h-11 px-3.5 rounded-xl bg-white border border-rose-200 text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform hover:bg-rose-50"
+                href="https://maps.app.goo.gl/7Y9bQ7KsmJtXt7ZJ7" target="_blank">
+                <span class="material-symbols-outlined text-[18px] text-primary-container">map</span>
+                <span>Maps</span>
+              </a>
+            </div>
+          </div>
+          <!-- Cabang 3: Gegunung -->
+          <div class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-primary-container font-label-sm text-label-sm font-bold">Cabang
+                03</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5 font-medium">
+                <span class="w-2 h-2 rounded-full bg-primary-container"></span> Buka 08.00 - 20.00
+              </span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface">Moza Laundry Gegunung</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Gegunung
+              </p>
+            </div>
+            <div class="flex items-center gap-2 text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[18px] text-primary-container">call</span>
+              <span>0831-7119-2666</span>
+            </div>
+            <div class="flex gap-2 pt-1">
+              <a class="flex-1 h-11 rounded-xl bg-gradient-to-r from-[#E11D48] to-[#BE123C] text-white font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform font-bold hover:brightness-105"
+                href="https://wa.me/6283171192666?text=Halo%20Moza%20Laundry%20Gegunung,%20saya%20ingin%20menanyakan%20layanan%20laundry"
+                target="_blank">
+                <span class="material-symbols-outlined text-[18px]">chat</span>
+                <span>WhatsApp Gegunung</span>
+              </a>
+              <a class="h-11 px-3.5 rounded-xl bg-white border border-rose-200 text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform hover:bg-rose-50"
+                href="https://maps.app.goo.gl/vqgkkoX3cNBiqZu37" target="_blank">
+                <span class="material-symbols-outlined text-[18px] text-primary-container">map</span>
+                <span>Maps</span>
+              </a>
+            </div>
+          </div>
+          <!-- Cabang 4: Karangsari -->
+          <div class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <span
+                class="px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-primary-container font-label-sm text-label-sm font-bold">Cabang
+                04</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5 font-medium">
+                <span class="w-2 h-2 rounded-full bg-primary-container"></span> Buka 08.00 - 17.00
+              </span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface">Moza Laundry Karangsari</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Karangsari
+              </p>
+            </div>
+            <div class="flex items-center gap-2 text-on-surface font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[18px] text-primary-container">call</span>
+              <span>0881-0227-22888</span>
+            </div>
+            <div class="flex gap-2 pt-1">
+              <a class="flex-1 h-11 rounded-xl bg-gradient-to-r from-[#E11D48] to-[#BE123C] text-white font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform font-bold hover:brightness-105"
+                href="https://wa.me/62881022722888?text=Halo%20Moza%20Laundry%20Karangsari,%20saya%20ingin%20menanyakan%20layanan%20laundry"
+                target="_blank">
+                <span class="material-symbols-outlined text-[18px]">chat</span>
+                <span>WhatsApp Karangsari</span>
+              </a>
+              <a class="h-11 px-3.5 rounded-xl bg-white border border-rose-200 text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform hover:bg-rose-50"
+                href="https://maps.app.goo.gl/mb4vPtkz5avWwdMy6" target="_blank">
+                <span class="material-symbols-outlined text-[18px] text-primary-container">map</span>
+                <span>Maps</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 6. WHATSAPP ORDER FLOW (INTERACTIVE BRANCH SELECTOR) -->
+      <section class="px-gutter-mobile py-space-lg flex flex-col gap-space-md bg-white" id="interactive-selector">
+        <div class="p-5 rounded-2xl bg-white border border-rose-100 shadow-md flex flex-col gap-space-sm">
+          <div class="flex flex-col gap-1">
+            <span class="font-label-sm text-label-sm text-primary-container font-bold uppercase tracking-wider">Direct
+              WA Dispatch</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">Pesan Langsung ke Cabang Pilihan Anda</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Anda ingin menghubungi cabang mana hari ini?
+            </p>
+          </div>
+          <!-- Tab Buttons -->
+          <div class="grid grid-cols-4 gap-1.5 p-1 rounded-xl bg-rose-50 border border-rose-100">
+            <button
+              class="branch-btn py-2 px-1 rounded-lg text-center font-label-md text-label-md transition-all bg-primary-container text-white shadow-sm font-bold"
+              data-branch="trusmi" type="button">
+              Trusmi
+            </button>
+            <button
+              class="branch-btn py-2 px-1 rounded-lg text-center font-label-md text-label-md transition-all text-on-surface hover:bg-white/80"
+              data-branch="weru" type="button">
+              Weru
+            </button>
+            <button
+              class="branch-btn py-2 px-1 rounded-lg text-center font-label-md text-label-md transition-all text-on-surface hover:bg-white/80"
+              data-branch="gegunung" type="button">
+              Gegunung
+            </button>
+            <button
+              class="branch-btn py-2 px-1 rounded-lg text-center font-label-md text-label-md transition-all text-on-surface hover:bg-white/80"
+              data-branch="karangsari" type="button">
+              Karangsari
+            </button>
+          </div>
+          <!-- Dynamic Branch Details Display -->
+          <div class="p-4 rounded-xl bg-rose-50/50 border border-rose-100 flex flex-col gap-2.5">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-primary-container text-[20px]">storefront</span>
+                <span class="font-title-sm text-title-sm text-on-surface" id="selected-branch-title">Cabang
+                  Trusmi</span>
+              </div>
+              <span
+                class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-rose-100 text-primary-container font-bold"
+                id="selected-branch-phone">
+                0882-2060-8555
+              </span>
+            </div>
+            <div class="p-3 rounded-lg bg-white border border-rose-100 flex flex-col gap-1 shadow-sm">
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Pesan Otomatis
+                WhatsApp:</span>
+              <p class="font-body-sm text-body-sm text-on-surface italic" id="selected-branch-msg">
+                "Halo Moza Laundry Trusmi, saya ingin menanyakan layanan laundry."
+              </p>
+            </div>
+            <a class="w-full h-12 rounded-xl bg-gradient-to-r from-[#E11D48] to-[#BE123C] text-white font-label-md text-label-md flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(225,29,72,0.35)] active:scale-95 transition-transform mt-1 font-bold hover:brightness-105"
+              href="https://wa.me/6288220608555?text=Halo%20Moza%20Laundry%20Trusmi,%20saya%20ingin%20menanyakan%20layanan%20laundry"
+              id="selected-branch-cta" target="_blank">
+              <span class="material-symbols-outlined text-[20px]">chat</span>
+              <span id="selected-branch-cta-label">Chat WhatsApp Trusmi</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- 7. PROMO SECTION -->
+      <section class="px-gutter-mobile py-space-sm flex flex-col">
+        <div
+          class="p-5 rounded-2xl bg-gradient-to-br from-[#E11D48] via-[#BE123C] to-[#881337] text-white shadow-lg flex flex-col gap-3 relative overflow-hidden">
+          <!-- Decorative Glow -->
+          <div
+            class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-rose-400 opacity-20 blur-2xl pointer-events-none">
+          </div>
+
+          <!-- Badge -->
+          <div
+            class="inline-flex items-center gap-1 self-start px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-sm text-white font-label-sm text-label-sm font-semibold border border-white/30">
+            <span class="material-symbols-outlined text-[14px]">card_membership</span>
+            <span>PROMO MEMBERSHIP</span>
+          </div>
+
+          <!-- Headline & Description -->
+          <div class="flex flex-col gap-1">
+            <h2 class="font-headline-lg text-headline-lg text-white leading-tight font-extrabold">PROMO MEMBERSHIP —
+              Hemat 15%</h2>
+            <p class="font-body-sm text-body-sm text-rose-100">
+              Lebih hemat, lebih bersih, lebih cepat! Berlaku di seluruh cabang Moza Laundry.
+            </p>
+          </div>
+
+          <!-- Top Up Tiers List -->
+          <div class="flex flex-col gap-2 p-3 rounded-xl bg-white/10 backdrop-blur-md border border-white/20">
+            <span class="font-label-sm text-[11px] text-rose-200 font-semibold uppercase tracking-wider mb-1">Paket Top
+              Up:</span>
+
+            <!-- Tier 1 -->
+            <div class="flex justify-between items-center border-b border-white/10 pb-2">
+              <span class="font-body-md text-body-md text-white/90">Top Up <span class="font-bold">Rp
+                  1.000.000</span></span>
+              <span class="font-label-md text-label-md text-white font-bold flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                Bayar Rp 850.000
+              </span>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="flex justify-between items-center border-b border-white/10 pb-2">
+              <span class="font-body-md text-body-md text-white/90">Top Up <span class="font-bold">Rp
+                  500.000</span></span>
+              <span class="font-label-md text-label-md text-white font-bold flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                Bayar Rp 425.000
+              </span>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="flex justify-between items-center">
+              <span class="font-body-md text-body-md text-white/90">Top Up <span class="font-bold">Rp
+                  250.000</span></span>
+              <span class="font-label-md text-label-md text-white font-bold flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                Bayar Rp 212.500
+              </span>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <a class="w-full h-11 rounded-xl bg-white text-primary-container hover:bg-rose-50 font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-transform mt-1 font-bold shadow-[0_4px_14px_rgba(0,0,0,0.15)]"
+            href="https://wa.me/6283839593431?text=Halo%20Moza%20Laundry%2C%20saya%20mau%20daftar%20promo%20membership"
+            target="_blank">
+            <span class="material-symbols-outlined text-[18px]">verified</span>
+            <span>Daftar Membership via WhatsApp</span>
+          </a>
+        </div>
+      </section>
+      <!-- 9. DOKUMENTASI / GALERI SECTION -->
+      <section class="px-gutter-mobile py-space-lg bg-rose-50/40 border-y border-rose-100 flex flex-col gap-space-md"
+        id="galeri">
+        <div class="flex flex-col gap-1">
+          <div
+            class="inline-flex items-center gap-1.5 text-primary-container font-label-sm text-label-sm font-bold tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">photo_library</span>
+            <span>DOKUMENTASI KERJA</span>
+          </div>
+          <h2 class="font-headline-xl text-headline-xl text-on-surface">Galeri & Aktivitas Moza</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Bukti nyata standar higienis dan kerapihan kami melalui dokumentasi proses di lapangan.
+          </p>
+        </div>
+
+        <!-- Galeri Grid (Mobile Friendly - Rasio 4:5 agar ga gepeng) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5">
+
+          <!-- Foto 1 (Di mobile jadi 2 kolom rasio 4:5, di desktop jadi lebar) -->
+          <div
+            class="relative rounded-xl overflow-hidden border border-rose-100 shadow-sm group cursor-pointer aspect-[4/5] md:aspect-[2/1] md:col-span-2">
+            <img src="assets/image.png" alt="Dokumentasi aktivitas Moza Laundry"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+          </div>
+
+          <!-- Foto 2 (Di mobile rasio 4:5, di desktop jadi tinggi) -->
+          <div
+            class="relative rounded-xl overflow-hidden border border-rose-100 shadow-sm group cursor-pointer aspect-[4/5] md:row-span-2 md:aspect-auto">
+            <img src="assets/potret.jpeg" alt="Dokumentasi layanan Moza Laundry"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+          </div>
+
+          <!-- Foto 3 (Di mobile rasio 4:5, di desktop jadi tinggi) -->
+          <div
+            class="relative rounded-xl overflow-hidden border border-rose-100 shadow-sm group cursor-pointer aspect-[4/5] md:row-span-2 md:aspect-auto">
+            <img src="assets/image copy 2.png" alt="Proses laundry Moza Laundry"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+          </div>
+
+          <!-- Foto 4 -->
+          <div
+            class="relative rounded-xl overflow-hidden border border-rose-100 shadow-sm group cursor-pointer aspect-[4/5]">
+            <img src="assets/image copy 3.png" alt="Aktivitas laundry Moza Laundry"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+          </div>
+
+          <!-- Foto 5 -->
+          <div
+            class="relative rounded-xl overflow-hidden border border-rose-100 shadow-sm group cursor-pointer aspect-[4/5]">
+            <img src="assets/image copy 4.png" alt="Dokumentasi Moza Laundry"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+          </div>
+
+          <!-- Foto 6 -->
+          <div
+            class="relative rounded-xl overflow-hidden border border-rose-100 shadow-sm group cursor-pointer aspect-[4/5]">
+            <img src="assets/image copy 5.png" alt="Kegiatan Moza Laundry"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+          </div>
+
+        </div>
+      </section>
+      <!-- 8. TESTIMONIALS -->
+      <section class="px-gutter-mobile py-space-lg flex flex-col gap-space-md bg-white">
+        <div class="flex flex-col gap-1">
+          <div
+            class="inline-flex items-center gap-1.5 text-primary-container font-label-sm text-label-sm font-bold tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">reviews</span>
+            <span>TESTIMONI PELANGGAN</span>
+          </div>
+          <h2 class="font-headline-xl text-headline-xl text-on-surface">Mereka Bilang Apa?</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Review jujur dari pelanggan setia Moza Laundry di berbagai cabang.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+
+          <!-- Testimoni 1 -->
+          <div class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full border-2 border-rose-100 bg-rose-50 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[22px]">local_laundry_service</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-title-sm text-title-sm text-on-surface">Sinta</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">Cabang Weru</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-0.5 text-amber-400">
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              "udah 3x disini nonjol nonjol, bawaannya bikin nagih 😭 pakaian disetrika rapi bgt sampai kemeja suamiku
+              kayak baru beli. wanginya juga tahan lama, ga kayak laundry lain yg cuma wangi di awal doang!"
+            </p>
+          </div>
+
+          <!-- Testimoni 2 -->
+          <div class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full border-2 border-rose-100 bg-rose-50 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[22px]">local_laundry_service</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-title-sm text-title-sm text-on-surface">Dimas P.</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">Cabang Trusmi</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-0.5 text-amber-400">
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              "tadi mau rapat dadakan bawa kemeja deh, untung ada paket kilat 6 jam. tebal mana kotor, tapi pas diambil
+              udah rapih dan wangi bgt. driver nya juga ramah, jemputnya cepat. top dah moza!"
+            </p>
+          </div>
+
+          <!-- Testimoni 3 -->
+          <div class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full border-2 border-rose-100 bg-rose-50 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[22px]">local_laundry_service</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-title-sm text-title-sm text-on-surface">Rina M.</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">Cabang Gegunung</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-0.5 text-amber-400">
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              "bed cover tebal gw yg udah setahun ga dicuci bersih dimana pun, eh di moza angkat semua noda nya. ga
+              nyangka sih. bener2 higienis katanya 1 mesin 1 orang, jadi ga ketuker sama baju orang. aman!"
+            </p>
+          </div>
+
+          <!-- Testimoni 4 -->
+          <div class="p-4 rounded-2xl bg-white border border-rose-100 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full border-2 border-rose-100 bg-rose-50 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-[22px]">local_laundry_service</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-title-sm text-title-sm text-on-surface">Asep K.</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant">Cabang Karangsari</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-0.5 text-amber-400">
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              "baru aja daftar membership, top up 500rb cuma bayar 425rb. udah gitu cucian tiap minggu ga pke mikir lg
+              soal ongkir, antar jemputnya gratis. paling worth it buat yg males nyuci kaya gw 👍"
+            </p>
+          </div>
+
+        </div>
+      </section>
+      <!-- 9. FAQ SECTION (Accordion) -->
+      <section class="px-gutter-mobile py-space-lg bg-rose-50/40 border-y border-rose-100 flex flex-col gap-space-md">
+        <div class="flex flex-col gap-1">
+          <div
+            class="inline-flex7 items-center gap-1.5 text-primary-container font-label-sm text-label-sm font-bold tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">help</span>
+            <span>PERTANYAAN UMUM</span>
+          </div>
+          <h2 class="font-headline-xl text-headline-xl text-on-surface">FAQ Seputar Layanan</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Jawaban atas hal-hal yang sering ditanyakan pelanggan kami.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2.5">
+          <!-- FAQ 1 -->
+          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
+            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
+              <span class="font-title-sm text-title-sm text-on-surface">Berapa lama proses laundry?</span>
+              <span
+                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
+            </button>
+            <div
+              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
+              Kami menyediakan beberapa opsi durasi pengerjaan: 3 Hari (Reguler), 2 Hari, 1 Hari (Express), dan Kilat 6
+              Jam untuk kebutuhan mendadak.
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
+            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
+              <span class="font-title-sm text-title-sm text-on-surface">Bagaimana sistem harga dan hitungan
+                kiloannya?</span>
+              <span
+                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
+            </button>
+            <div
+              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
+              Harga bervariasi berdasarkan durasi. Untuk Cuci Setrika harga dihitung per 3 Kg, Cuci Lipat per 5 Kg, dan
+              Setrika Saja per 4 Kg. Anda bisa cek detail daftar harga terbaru di atas.
+            </div>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
+            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
+              <span class="font-title-sm text-title-sm text-on-surface">Apakah ada layanan antar jemput?</span>
+              <span
+                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
+            </button>
+            <div
+              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
+              Tersedia! Driver Moza Laundry siap menjemput dan mengantar pakaian Anda. Hubungi CS cabang terdekat via
+              WhatsApp untuk jadwal penjemputan.
+            </div>
+          </div>
+          <!-- FAQ 4 -->
+          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
+            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
+              <span class="font-title-sm text-title-sm text-on-surface">Apa itu Promo Membership Moza?</span>
+              <span
+                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
+            </button>
+            <div
+              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
+              Membership adalah program top-up saldo di mana Anda bisa mendapat potongan 15%. Contoh: Top Up Rp
+              1.000.000, Anda hanya bayar Rp 850.000. Berlaku di seluruh cabang Moza Laundry.
+            </div>
+          </div>
+          <!-- FAQ 5 -->
+          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
+            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
+              <span class="font-title-sm text-title-sm text-on-surface">Di mana saja lokasi cabang Moza Laundry?</span>
+              <span
+                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
+            </button>
+            <div
+              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
+              Saat ini kami hadir di 4 cabang strategis: Trusmi, Weru, Gegunung, dan Karangsari. Anda dapat memilih
+              tombol cabang terdekat di section Lokasi Outlet atau via WhatsApp.
+            </div>
+          </div>
+          <!-- FAQ 6 -->
+          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
+            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
+              <span class="font-title-sm text-title-sm text-on-surface">Apakah nomor WhatsApp setiap cabang beda?</span>
+              <span
+                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
+            </button>
+            <div
+              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
+              Benar. Setiap cabang memiliki Customer Service dan tim kurir tersendiri agar proses konfirmasi jadwal dan
+              komunikasi antar-jemput berjalan jauh lebih cepat dan tidak antre di satu nomor.
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 10. FINAL CTA -->
+      <section class="px-gutter-mobile py-space-xl flex flex-col bg-white">
+        <div
+          class="p-6 rounded-2xl bg-gradient-to-br from-[#E11D48] via-[#BE123C] to-[#881337] text-white shadow-xl flex flex-col items-center text-center gap-space-sm relative overflow-hidden">
+          <div
+            class="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center shadow-inner">
+            <span class="material-symbols-outlined text-[30px]">local_laundry_service</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <h2 class="font-headline-xl text-headline-xl text-white font-extrabold">Siap Laundry Tanpa Ribet?</h2>
+            <p class="font-body-sm text-body-sm text-rose-100 max-w-xs">
+              Hubungi cabang terdekat dan pesan laundry Anda sekarang. Pakaian bersih, wangi, dan rapi siap dijemput
+              hari ini!
+            </p>
+          </div>
+          <a class="w-full h-12 rounded-xl bg-white text-primary-container hover:bg-rose-50 font-label-md text-label-md flex items-center justify-center gap-2 shadow-[0_4px_16px_rgba(0,0,0,0.2)] active:scale-95 transition-transform font-bold"
+            href="https://wa.me/6283839593431?text=Halo%20Moza%20Laundry,%20saya%20mau%20pesan%20laundry">
+            <span class="material-symbols-outlined text-[20px] text-primary-container">chat</span>
+            <span>Chat WhatsApp Sekarang</span>
+          </a>
+        </div>
+      </section>
+    </div>
+    <script>
+      (function initMozaLaundryInteractions() {
+        const branches = {
+          trusmi: {
+            title: "Cabang Trusmi",
+            phone: "0882-2060-8555",
+            msg: '"Halo Moza Laundry Trusmi, saya ingin menanyakan layanan laundry."',
+            href: "https://wa.me/6288220608555?text=Halo%20Moza%20Laundry%20Trusmi,%20saya%20ingin%20menanyakan%20layanan%20laundry",
+            label: "Chat WhatsApp Trusmi"
+          },
+          weru: {
+            title: "Cabang Weru",
+            phone: "0882-1859-1963",
+            msg: '"Halo Moza Laundry Weru, saya ingin menanyakan layanan laundry."',
+            href: "https://wa.me/6288218591963?text=Halo%20Moza%20Laundry%20Weru,%20saya%20ingin%20menanyakan%20layanan%20laundry",
+            label: "Chat WhatsApp Weru"
+          },
+          gegunung: {
+            title: "Cabang Gegunung",
+            phone: "0831-7119-2666",
+            msg: '"Halo Moza Laundry Gegunung, saya ingin menanyakan layanan laundry."',
+            href: "https://wa.me/6283171192666?text=Halo%20Moza%20Laundry%20Gegunung,%20saya%20ingin%20menanyakan%20layanan%20laundry",
+            label: "Chat WhatsApp Gegunung"
+          },
+          karangsari: {
+            title: "Cabang Karangsari",
+            phone: "0881-0227-22888",
+            msg: '"Halo Moza Laundry Karangsari, saya ingin menanyakan layanan laundry."',
+            href: "https://wa.me/62881022722888?text=Halo%20Moza%20Laundry%20Karangsari,%20saya%20ingin%20menanyakan%20layanan%20laundry",
+            label: "Chat WhatsApp Karangsari"
+          }
+        };
+
+        const branchButtons = document.querySelectorAll(".branch-btn");
+        const titleEl = document.getElementById("selected-branch-title");
+        const phoneEl = document.getElementById("selected-branch-phone");
+        const msgEl = document.getElementById("selected-branch-msg");
+        const ctaEl = document.getElementById("selected-branch-cta");
+        const ctaLabelEl = document.getElementById("selected-branch-cta-label");
+
+        branchButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const key = btn.getAttribute("data-branch");
+            const data = branches[key];
+            if (!data) return;
+
+            branchButtons.forEach((b) => {
+              b.classList.remove("bg-primary-container", "text-white", "shadow-sm", "font-bold");
+              b.classList.add("text-on-surface");
+            });
+
+            btn.classList.add("bg-primary-container", "text-white", "shadow-sm", "font-bold");
+            btn.classList.remove("text-on-surface");
+
+            if (titleEl) titleEl.textContent = data.title;
+            if (phoneEl) phoneEl.textContent = data.phone;
+            if (msgEl) msgEl.textContent = data.msg;
+            if (ctaEl) ctaEl.setAttribute("href", data.href);
+            if (ctaLabelEl) ctaLabelEl.textContent = data.label;
+          });
+        });
+
+        const faqToggles = document.querySelectorAll(".faq-toggle");
+        faqToggles.forEach((toggle) => {
+          toggle.addEventListener("click", () => {
+            const content = toggle.nextElementSibling;
+            const icon = toggle.querySelector(".faq-icon");
+            const isHidden = content.classList.contains("hidden");
+
+            faqToggles.forEach((otherToggle) => {
+              const otherContent = otherToggle.nextElementSibling;
+              const otherIcon = otherToggle.querySelector(".faq-icon");
+              otherContent.classList.add("hidden");
+              if (otherIcon) otherIcon.style.transform = "rotate(0deg)";
+            });
+
+            if (isHidden) {
+              content.classList.remove("hidden");
+              if (icon) icon.style.transform = "rotate(180deg)";
+            }
+          });
+        });
+      })();
+    </script>
+    <footer class="w-full bg-rose-50/70 border-t border-rose-100 px-gutter-mobile pt-space-xl pb-space-lg">
+      <div class="flex flex-col gap-space-md">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <img alt="Moza Laundry Logo" class="h-8 w-auto object-contain flex-shrink-0" src="assets/logomoza.png" />
+          <div class="flex flex-col pl-1 border-l border-rose-200"><span
+              class="font-headline-md text-headline-md text-on-surface leading-tight">Moza Laundry</span><span
+              class="font-label-sm text-[11px] text-primary-container font-bold">PREMIUM &amp; HIGIENIS</span></div>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Layanan binatu premium express terpercaya di
+          Area Weru & Cirebon. Antar-jemput gratis, higienis, dan wangi tahan lama dengan standar perawatan kain hotel
+          berbintang.</p>
+
+        <!-- Kontak Langsung -->
+        <div class="flex flex-col gap-2">
+          <a href="https://wa.me/6283839593431" target="_blank"
+            class="flex items-center gap-2 text-primary-container font-label-md text-label-md font-semibold hover:underline">
+            <span class="material-symbols-outlined text-[18px]">chat</span>
+            0838-3959-3431 (WhatsApp)
+          </a>
+          <a href="mailto:mozalaundrycabangweru@gmail.com"
+            class="flex items-center gap-2 text-primary-container font-label-md text-label-md font-semibold hover:underline">
+            <span class="material-symbols-outlined text-[18px]">mail</span>
+            mozalaundrycabangweru@gmail.com
+          </a>
+        </div>
+
+        <div class="flex flex-col gap-space-xs"><span
+            class="font-label-md text-label-md text-on-surface font-bold">Cabang Resmi:</span>
+          <div class="flex flex-wrap gap-1.5"><span
+              class="px-2.5 py-1 rounded-full bg-white border border-rose-200 text-primary-container font-label-sm text-label-sm font-semibold">Trusmi</span><span
+              class="px-2.5 py-1 rounded-full bg-white border border-rose-200 text-primary-container font-label-sm text-label-sm font-semibold">Weru</span><span
+              class="px-2.5 py-1 rounded-full bg-white border border-rose-200 text-primary-container font-label-sm text-label-sm font-semibold">Gegunung</span><span
+              class="px-2.5 py-1 rounded-full bg-white border border-rose-200 text-primary-container font-label-sm text-label-sm font-semibold">Karangsari</span>
+          </div>
+        </div>
+        <div
+          class="flex flex-wrap gap-x-4 gap-y-1 pt-space-xs font-label-sm text-label-sm text-primary-container font-semibold">
+          <a data-path="home" href="#">Beranda</a><a data-path="layanan" href="#">Layanan</a><a data-path="keunggulan"
+            href="#">Keunggulan</a><a data-path="cabang" href="#">Cabang</a><a data-path="faq" href="#">FAQ</a>
+        </div>
+        <div class="pt-space-sm text-center border-t border-rose-100">
+          <p class="font-label-sm text-label-sm text-on-surface-variant/70">© 2026 samastudio. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </main><a
+    class="fixed right-4 bottom-24 z-40 h-14 w-14 rounded-full bg-gradient-to-tr from-[#BE123C] to-[#E11D48] text-white flex items-center justify-center shadow-[0_8px_20px_rgba(225,29,72,0.4)] active:scale-95 transition-transform"
+    href="https://wa.me/6283839593431?text=Halo%20Moza%20Laundry%2C%20pilih%20cabang%20terdekat%20saya"
+    target="_blank"><span class="material-symbols-outlined text-[30px]">support_agent</span></a>
+
+</body>
+
+</html>
