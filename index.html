@@ -192,6 +192,68 @@
   {
     "@context": "https://schema.org",
     "@graph": [
+    {
+  "@type": "FAQPage",
+  "@id": "https://mozalaundry.co-id.id/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Berapa lama proses laundry di Moza Laundry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tersedia beberapa pilihan durasi: 3 Hari (paket hemat), Reguler (2 hari), Express (12 jam / same day), dan Kilat (4–6 jam). Durasi dihitung sejak cucian diterima oleh outlet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah benar 1 mesin hanya untuk 1 pelanggan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, Moza Laundry menerapkan sistem 1 Mesin 1 Pelanggan. Cucian Anda tidak dicampur dengan cucian pelanggan lain sehingga lebih higienis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah ada layanan antar-jemput gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, Moza Laundry menyediakan layanan antar-jemput door-to-door gratis di area sekitar setiap cabang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa minimal berat cucian?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Harga berdasarkan satuan berat minimal: Cuci Setrika per 3 Kg, Cuci Lipat per 5 Kg, dan Setrika Saja per 4 Kg."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa itu promo Membership Moza Laundry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Promo Membership memberikan diskon 15% untuk setiap top-up saldo. Misalnya top-up Rp 1.000.000, Anda hanya bayar Rp 850.000. Berlaku di seluruh cabang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara order via WhatsApp?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pilih cabang terdekat, lalu klik tombol WhatsApp pada kartu cabang atau di bagian Pesan Langsung. Anda akan terhubung langsung ke admin outlet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Deterjen dan pewangi apa yang digunakan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moza Laundry menggunakan deterjen bersertifikasi dan pewangi konsentrat eksklusif yang tahan hingga 14 hari. Air cucian melalui filtrasi 3 tahap."
+      }
+    }
+  ]
+}
       {
         "@type": "Organization",
         "@id": "https://mozalaundry.co-id.id/#organization",
@@ -1055,98 +1117,95 @@
         </div>
       </section>
       <!-- 9. FAQ SECTION (Accordion) -->
-      <section class="px-gutter-mobile py-space-lg bg-rose-50/40 border-y border-rose-100 flex flex-col gap-space-md">
+      <!-- 8. FAQ SECTION -->
+      <section class="px-gutter-mobile py-space-lg bg-white flex flex-col gap-space-md" id="faq-section">
         <div class="flex flex-col gap-1">
-          <div
-            class="inline-flex7 items-center gap-1.5 text-primary-container font-label-sm text-label-sm font-bold tracking-wider">
+          <div class="inline-flex items-center gap-1.5 text-primary-container font-label-sm text-label-sm font-bold tracking-wider">
             <span class="material-symbols-outlined text-[16px]">help</span>
             <span>PERTANYAAN UMUM</span>
           </div>
-          <h2 class="font-headline-xl text-headline-xl text-on-surface">FAQ Seputar Layanan</h2>
-          <p class="font-body-sm text-body-sm text-on-surface-variant">
-            Jawaban atas hal-hal yang sering ditanyakan pelanggan kami.
-          </p>
+          <h2 class="font-headline-xl text-headline-xl text-on-surface">FAQ — Sering Ditanyakan</h2>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Jawaban cepat untuk pertanyaan yang paling sering ditanyakan pelanggan kami.</p>
         </div>
         <div class="flex flex-col gap-2.5">
+
           <!-- FAQ 1 -->
-          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
-            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
-              <span class="font-title-sm text-title-sm text-on-surface">Berapa lama proses laundry?</span>
-              <span
-                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
-            </button>
-            <div
-              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
-              Kami menyediakan beberapa opsi durasi pengerjaan: 3 Hari (Reguler), 2 Hari, 1 Hari (Express), dan Kilat 6
-              Jam untuk kebutuhan mendadak.
+          <details class="group rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden">
+            <summary class="p-4 flex items-center justify-between gap-3 cursor-pointer select-none list-none">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Berapa lama proses laundry di Moza Laundry?</h3>
+              <span class="material-symbols-outlined text-[20px] text-primary-container flex-shrink-0 transition-transform duration-200 group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-4 pb-4 -mt-1">
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Tersedia beberapa pilihan durasi: <strong class="text-on-surface">3 Hari</strong> (paket hemat), <strong class="text-on-surface">Reguler</strong> (2 hari), <strong class="text-on-surface">Express</strong> (12 jam / same day), dan <strong class="text-on-surface">Kilat</strong> (4–6 jam). Durasi dihitung sejak cucian diterima oleh outlet.</p>
             </div>
-          </div>
+          </details>
+
           <!-- FAQ 2 -->
-          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
-            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
-              <span class="font-title-sm text-title-sm text-on-surface">Bagaimana sistem harga dan hitungan
-                kiloannya?</span>
-              <span
-                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
-            </button>
-            <div
-              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
-              Harga bervariasi berdasarkan durasi. Untuk Cuci Setrika harga dihitung per 3 Kg, Cuci Lipat per 5 Kg, dan
-              Setrika Saja per 4 Kg. Anda bisa cek detail daftar harga terbaru di atas.
+          <details class="group rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden">
+            <summary class="p-4 flex items-center justify-between gap-3 cursor-pointer select-none list-none">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Apakah benar 1 mesin hanya untuk 1 pelanggan?</h3>
+              <span class="material-symbols-outlined text-[20px] text-primary-container flex-shrink-0 transition-transform duration-200 group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-4 pb-4 -mt-1">
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Ya, Moza Laundry menerapkan sistem <strong class="text-on-surface">1 Mesin 1 Pelanggan</strong>. Cucian Anda tidak dicampur dengan cucian pelanggan lain sehingga lebih higienis dan terjamin kebersihannya.</p>
             </div>
-          </div>
+          </details>
+
           <!-- FAQ 3 -->
-          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
-            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
-              <span class="font-title-sm text-title-sm text-on-surface">Apakah ada layanan antar jemput?</span>
-              <span
-                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
-            </button>
-            <div
-              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
-              Tersedia! Driver Moza Laundry siap menjemput dan mengantar pakaian Anda. Hubungi CS cabang terdekat via
-              WhatsApp untuk jadwal penjemputan.
+          <details class="group rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden">
+            <summary class="p-4 flex items-center justify-between gap-3 cursor-pointer select-none list-none">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Apakah ada layanan antar-jemput gratis?</h3>
+              <span class="material-symbols-outlined text-[20px] text-primary-container flex-shrink-0 transition-transform duration-200 group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-4 pb-4 -mt-1">
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Ya, Moza Laundry menyediakan layanan <strong class="text-on-surface">antar-jemput door-to-door gratis</strong> di area sekitar setiap cabang. Driver berseragam kami akan menjemput dan mengantarkan cucian ke rumah Anda.</p>
             </div>
-          </div>
+          </details>
+
           <!-- FAQ 4 -->
-          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
-            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
-              <span class="font-title-sm text-title-sm text-on-surface">Apa itu Promo Membership Moza?</span>
-              <span
-                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
-            </button>
-            <div
-              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
-              Membership adalah program top-up saldo di mana Anda bisa mendapat potongan 15%. Contoh: Top Up Rp
-              1.000.000, Anda hanya bayar Rp 850.000. Berlaku di seluruh cabang Moza Laundry.
+          <details class="group rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden">
+            <summary class="p-4 flex items-center justify-between gap-3 cursor-pointer select-none list-none">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Berapa minimal berat cucian?</h3>
+              <span class="material-symbols-outlined text-[20px] text-primary-container flex-shrink-0 transition-transform duration-200 group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-4 pb-4 -mt-1">
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Harga yang tertera berdasarkan satuan berat minimal: <strong class="text-on-surface">Cuci Setrika per 3 Kg</strong>, <strong class="text-on-surface">Cuci Lipat per 5 Kg</strong>, dan <strong class="text-on-surface">Setrika Saja per 4 Kg</strong>. Jika cucian Anda di bawah minimal, tetap dikenakan harga satuan minimal.</p>
             </div>
-          </div>
+          </details>
+
           <!-- FAQ 5 -->
-          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
-            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
-              <span class="font-title-sm text-title-sm text-on-surface">Di mana saja lokasi cabang Moza Laundry?</span>
-              <span
-                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
-            </button>
-            <div
-              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
-              Saat ini kami hadir di 4 cabang strategis: Trusmi, Weru, Gegunung, dan Karangsari. Anda dapat memilih
-              tombol cabang terdekat di section Lokasi Outlet atau via WhatsApp.
+          <details class="group rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden">
+            <summary class="p-4 flex items-center justify-between gap-3 cursor-pointer select-none list-none">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Apa itu promo Membership Moza Laundry?</h3>
+              <span class="material-symbols-outlined text-[20px] text-primary-container flex-shrink-0 transition-transform duration-200 group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-4 pb-4 -mt-1">
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Promo Membership memberikan <strong class="text-on-surface">diskon 15%</strong> untuk setiap top-up saldo. Misalnya top-up Rp 1.000.000, Anda hanya bayar Rp 850.000. Berlaku di seluruh cabang Moza Laundry.</p>
             </div>
-          </div>
+          </details>
+
           <!-- FAQ 6 -->
-          <div class="faq-item rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden transition-all">
-            <button class="faq-toggle w-full p-4 text-left flex items-center justify-between gap-2" type="button">
-              <span class="font-title-sm text-title-sm text-on-surface">Apakah nomor WhatsApp setiap cabang beda?</span>
-              <span
-                class="material-symbols-outlined text-[20px] text-primary-container faq-icon transition-transform">keyboard_arrow_down</span>
-            </button>
-            <div
-              class="faq-content hidden px-4 pb-4 font-body-sm text-body-sm text-on-surface-variant border-t border-rose-50 pt-3">
-              Benar. Setiap cabang memiliki Customer Service dan tim kurir tersendiri agar proses konfirmasi jadwal dan
-              komunikasi antar-jemput berjalan jauh lebih cepat dan tidak antre di satu nomor.
+          <details class="group rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden">
+            <summary class="p-4 flex items-center justify-between gap-3 cursor-pointer select-none list-none">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Bagaimana cara order via WhatsApp?</h3>
+              <span class="material-symbols-outlined text-[20px] text-primary-container flex-shrink-0 transition-transform duration-200 group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-4 pb-4 -mt-1">
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Pilih cabang terdekat Anda, lalu klik tombol <strong class="text-on-surface">WhatsApp</strong> pada kartu cabang atau di bagian "Pesan Langsung". Anda akan terhubung langsung ke admin outlet pilihan untuk konfirmasi layanan dan lokasi penjemputan.</p>
             </div>
-          </div>
+          </details>
+
+          <!-- FAQ 7 -->
+          <details class="group rounded-xl bg-white border border-rose-100 shadow-sm overflow-hidden">
+            <summary class="p-4 flex items-center justify-between gap-3 cursor-pointer select-none list-none">
+              <h3 class="font-title-sm text-title-sm text-on-surface">Deterjen dan pewangi apa yang digunakan?</h3>
+              <span class="material-symbols-outlined text-[20px] text-primary-container flex-shrink-0 transition-transform duration-200 group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="px-4 pb-4 -mt-1">
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Moza Laundry menggunakan deterjen <strong class="text-on-surface">bersertifikasi</strong> dan pewangi konsentrat eksklusif yang <strong class="text-on-surface">tahan hingga 14 hari</strong> di dalam lemari. Air cucian juga telah melalui <strong class="text-on-surface">filtrasi 3 tahap</strong> untuk hasil yang lebih bersih dan higienis.</p>
+            </div>
+          </details>
+
         </div>
       </section>
       <!-- 10. FINAL CTA -->
